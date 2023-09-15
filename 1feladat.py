@@ -22,9 +22,7 @@ for i in range(darabbetu):
     betuk=betuk+';\n'
 print(betuk)
 
-with open("ki.txt", "w")as f:
-    f.close()
-with open("ki.txt", "a") as f:
+with open("ki.txt", "w") as f:
     for index in range (len(szamok)):
         f.write(str(szamok[index])+";")
         ellenorzes=ellenorzes+str(szamok[index])+";"
