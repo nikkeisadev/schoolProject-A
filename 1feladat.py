@@ -29,8 +29,7 @@ with open("ki.txt", "a") as f:
         f.write(str(szamok[index])+";")
         ellenorzes=ellenorzes+str(szamok[index])+";"
     f.write("\n") 
-
-with open("ki.txt", "a")as f:
+    ellenorzes=ellenorzes+"\n"
     f.write(betuk)
     ellenorzes=ellenorzes+betuk
 with open("ki.txt", "r") as f:
