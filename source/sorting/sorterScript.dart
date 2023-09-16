@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 void main(){
-  var contents = File('ki.txt');
+  var contents = File('data/ki.txt');
   Directory current = Directory.current;
   var splitSource = contents.readAsStringSync().replaceAll("\n", "").trim().split(';');
   var numList = [];

@@ -1,5 +1,5 @@
 # Mechwart 11.f Class | Project Repository Vol I. ⭐
-> The members of the team: Katona Konstantin, Varga Máté, Földi Soma.
+> The members of the team: Varga Máté, Földi Soma, Katona Konstantin.
 ### About the Project:💻
 Members role: Máté ~ dealing with random generating, Soma ~ Web development and CSS styling, Constantine ~ Sorting readed values (Dart/C# proting, Flutter UI)
 ### All supported langs: 👨‍💻

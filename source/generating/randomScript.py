@@ -23,7 +23,7 @@ def generatingValues(darabszam, darabbetu, hatarszam1, hatarszam2):
 
 def savingValues():
     global saveList
-    with open("ki.txt", "w") as f:
+    with open("data/ki.txt", "w") as f:
         for index in range (len(numList)):
             f.write(str(numList[index])+";")
             saveList=saveList+str(numList[index])+";"
@@ -33,7 +33,7 @@ def savingValues():
         saveList=saveList+strList
 
 def checkingSave():
-    with open("ki.txt", "r") as f:
+    with open("data/ki.txt", "r") as f:
         file=f.read()   
         if saveList==file:
             print(f"{prefix}A megadott paraméter megfelelő a feltételeknek.")
