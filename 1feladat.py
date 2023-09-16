@@ -1,39 +1,46 @@
-import random
-import string
+import random, string
 
-darabszam=int(input("Add meg a darabszámot: "))
-hatarszam1=int(input("Add meg a kisebb határt: "))
-hatarszam2=int(input("Add meg a nagyobb határt: "))
-szamok=[]
-betuk=""
-ellenorzes=""
+prefix = 'RANDOM> '
+numList=[]
+strList=""
+saveList=""
 
-darabbetu=int(input("Add meg a darabszámot: "))
+def generatingValues(darabszam, darabbetu, hatarszam1, hatarszam2):
+    for i in range(darabszam):
+        x=random.randint(hatarszam1,hatarszam2)
+        numList.append(x)
 
-for i in range(darabszam):
-    x=random.randint(hatarszam1,hatarszam2)
-    szamok.append(x)
-print(szamok)
+    for i in range(darabbetu):
+        global strList
+        szam=random.randint(1,21)
+        for i in range(szam):
+            strList=strList+random.choice(string.ascii_letters)
+        strList=strList+';\n'
 
-for i in range(darabbetu):
-    szam=random.randint(1,21)
-    for i in range(szam):
-        betuk=betuk+random.choice(string.ascii_letters)
-    betuk=betuk+';\n'
-print(betuk)
+def savingValues():
+    global saveList
+    with open("ki.txt", "w") as f:
+        for index in range (len(numList)):
+            f.write(str(numList[index])+";")
+            saveList=saveList+str(numList[index])+";"
+        f.write("\n") 
+        saveList=saveList+"\n"
+        f.write(strList)
+        saveList=saveList+strList
 
-with open("ki.txt", "w") as f:
-    for index in range (len(szamok)):
-        f.write(str(szamok[index])+";")
-        ellenorzes=ellenorzes+str(szamok[index])+";"
-    f.write("\n") 
-    ellenorzes=ellenorzes+"\n"
-    f.write(betuk)
-    ellenorzes=ellenorzes+betuk
-with open("ki.txt", "r") as f:
-    file=f.read()   
-    if ellenorzes==file:
-        print("A megadott paraméter megfelelő a feltételeknek.")
-    else:
-        print("Nem megfelelő paramétert adott meg.")
+def checkingSave():
+    with open("ki.txt", "r") as f:
+        file=f.read()   
+        if saveList==file:
+            print(f"{prefix}A megadott paraméter megfelelő a feltételeknek.")
+        else:
+            print(f"{prefix}Nem megfelelő paramétert adott meg.")
 
+darabszam=int(input(f"{prefix}Add meg a számok generálásának darabszámát: "))
+darabbetu=int(input(f"{prefix}Add meg a betűk generálásának darabszámát: "))
+hatarszam1=int(input(f"{prefix}Add meg a kisebbik határt: "))
+hatarszam2=int(input(f"{prefix}Add meg a nagyobbik határt: "))
+
+generatingValues(darabszam, darabbetu, hatarszam1, hatarszam2)
+savingValues()
+checkingSave()
