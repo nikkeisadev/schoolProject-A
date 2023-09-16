@@ -12,7 +12,7 @@ void main(){
 
 ----> S O R T E R
 Writen in Dart(Google), by Nikke! Sorter sortiring values from a given file.
-[$current | is your working directory, place ki.txt here!] <---
+[$current | is your working directory, place ki.txt here!] <----
 """);
 
   for (var i = 0; i < splitSource.length; i++) {
