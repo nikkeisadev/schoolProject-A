@@ -5,8 +5,9 @@ void main(){
   var contents = File('ki.txt');
   Directory current = Directory.current;
   var splitSource = contents.readAsStringSync().replaceAll("\n", "").trim().split(';');
-  var numList = [];
-  var strList = [];
+  var mainList = [];
+  bool itsString = false;
+  bool itsInt = false;
 
   print("""
 
@@ -20,14 +21,24 @@ Writen in Dart(Google), by Nikke! Sorter sortiring values from a given file.
 
     if(double.tryParse(currentElement) == null){
 
-      print('$currentElement is a String.');
-      strList.add(currentElement);
+      if(itsInt){
+        print('$currentElement<---- The file contains wrong character(s) [!]\nCharacter type: int, at line [$i]');
+        break;
+      }
+      print('$currentElement is a String. [$i]');
+      mainList.add(currentElement);
+      itsString = true;
 
     } else {
-
-      print('$currentElement is a Number.');
-      numList.add(currentElement);
+      if(itsString){
+        print('$currentElement<---- The file contains wrong character(s) [!]\nCharacter type: string, at line [$i]');
+        break;
+      }
+      print('$currentElement is a Number. [$i]');
+      mainList.add(currentElement);
+      itsInt = true;
 
       }
   }
+  print('Elements successfuly added! [🗸]');
 }
