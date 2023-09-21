@@ -40,7 +40,7 @@ def checkingSave():
         else:
             print(f"{prefix}Nem megfelelő paramétert adott meg.")
 def bekeres()
-    dontes=int(input("Add meg hogy mit generáljunk(1-szám, 2-betű): ")
+    dontes=int(input("Add meg hogy mit generáljunk(1-szám, 2-betű): "))
     darabszam=int(input(f"{prefix}Add meg a számok generálásának darabszámát: "))
     darabbetu=int(input(f"{prefix}Add meg a betűk generálásának darabszámát: "))
     hatarszam1=int(input(f"{prefix}Add meg a kisebbik határt: "))
