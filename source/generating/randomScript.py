@@ -13,7 +13,7 @@ def generatingValues(darabszam, darabbetu, hatarszam1, hatarszam2):
     for i in range(darabszam):
         x=random.randint(hatarszam1,hatarszam2)
         numList.append(x)
-
+def generatingBetu(darabszam, darabbetu, hatarszam1, hatarszam2):
     for i in range(darabbetu):
         global strList
         szam=random.randint(1,21)
@@ -39,11 +39,13 @@ def checkingSave():
             print(f"{prefix}A megadott paraméter megfelelő a feltételeknek.")
         else:
             print(f"{prefix}Nem megfelelő paramétert adott meg.")
-
+            
+dontes=int(input("Add meg hogy mit generáljunk(1-szám, 2-betű): ")
 darabszam=int(input(f"{prefix}Add meg a számok generálásának darabszámát: "))
 darabbetu=int(input(f"{prefix}Add meg a betűk generálásának darabszámát: "))
 hatarszam1=int(input(f"{prefix}Add meg a kisebbik határt: "))
 hatarszam2=int(input(f"{prefix}Add meg a nagyobbik határt: "))
+if dontes == 1:
 
 generatingValues(darabszam, darabbetu, hatarszam1, hatarszam2)
 savingValues()
