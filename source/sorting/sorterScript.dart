@@ -17,7 +17,7 @@ Writen in Dart(Google), by Nikke! Sorter sortiring values from a given file.
 """);
 
   for (var i = 0; i < splitSource.length; i++) {
-    var currentElement = splitSource[i];
+    var currentElement = splitSource[di];
 
     if(double.tryParse(currentElement) == null){
 
@@ -41,4 +41,21 @@ Writen in Dart(Google), by Nikke! Sorter sortiring values from a given file.
       }
   }
   print('Elements successfuly added! [🗸]');
-}
+  
+  print("Select a sorting method [1/2]\nDescending order, or Ascending order?");
+  String? orderMethod = stdin.readLineSync();  
+  
+  if(orderMethod == 1){
+      print('You selected the descending order  [🗸]')
+      var descendingOrder = mainList
+      descendingOrder.sort((a, b) => a.compareTo(b));
+      print('The results: $descendingOrder')
+  }
+  
+  else if (orderMethod > 1){
+      print('You selected the ascending order  [🗸]')
+      var ascendingOrder = mainList
+      ascendingOrder.sort((a, b) => a.compareTo(b));
+      print('The results: $ascendingOrder')
+    }
+} 
