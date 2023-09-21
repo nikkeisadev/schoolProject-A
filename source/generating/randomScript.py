@@ -23,19 +23,8 @@ def generatingBetu( darabbetu):
             strList=strList+random.choice(string.ascii_letters)
         strList=strList+';\n'
 
-def savingValues():
-    global saveList
-    with open("data/ki.txt", "w") as f:
-        for index in range (len(numList)):
-            f.write(str(numList[index])+";")
-            saveList=saveList+str(numList[index])+";"
-        f.write("\n") 
-        saveList=saveList+"\n"
-        f.write(strList)
-        saveList=saveList+strList
-
 def checkingSave():
-    with open("data/ki.txt", "r") as f:
+    with open("ki.txt", "r") as f:
         file=f.read()   
         if saveList==file:
             print(f"{prefix}A megadott paraméter megfelelő a feltételeknek.")
@@ -60,8 +49,13 @@ except:
     bekeres()
 if dontes == 1:
     generatingValues(darabszam, hatarszam1, hatarszam2)
+    with open("ki.txt", "w") as f:
+        for index in range (len(numList)):
+            f.write(str(numList[index])+";")
+            saveList=saveList+str(numList[index])+";"
 else:
     generatingBetu( darabbetu)
-
-savingValues()
+    with open("ki.txt", "w") as f:
+        f.write(strList)
+        saveList=saveList+strList
 checkingSave()
