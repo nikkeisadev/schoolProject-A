@@ -11,6 +11,7 @@ Members role: Máté ~ dealing with random generating, Soma ~ Web development an
 ### Deadline of the project: 📆🍂
 > Must be finished ~ Sept. 30 |
 ### Trello Workspace: 📮
-Not yet... 
+Not yet... Is that necesary now?
 ### Todo list: 📋
 > You can check it here: **todo.pdf**
+https://miklospeter.wordpress.com 
