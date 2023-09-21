@@ -1,19 +1,21 @@
-+import random, string
+import random, string
 
 prefix = 'RANDOM> '
 numList=[]
 strList=""
 saveList=""
+dontes = None
 print("""
 
 ----> R A N D O M
 Varga Máté, Python  <----
 """)
-def generatingValues(darabszam, darabbetu, hatarszam1, hatarszam2):
+
+def generatingValues(darabszam, hatarszam1, hatarszam2):
     for i in range(darabszam):
         x=random.randint(hatarszam1,hatarszam2)
         numList.append(x)
-def generatingBetu(darabszam, darabbetu, hatarszam1, hatarszam2):
+def generatingBetu( darabbetu):
     for i in range(darabbetu):
         global strList
         szam=random.randint(1,21)
@@ -39,20 +41,27 @@ def checkingSave():
             print(f"{prefix}A megadott paraméter megfelelő a feltételeknek.")
         else:
             print(f"{prefix}Nem megfelelő paramétert adott meg.")
-def bekeres()
+def bekeres():
+    global dontes
+    global darabbetu
+    global darabszam
+    global hatarszam1
+    global hatarszam2
     dontes=int(input("Add meg hogy mit generáljunk(1-szám, 2-betű): "))
-    darabszam=int(input(f"{prefix}Add meg a számok generálásának darabszámát: "))
-    darabbetu=int(input(f"{prefix}Add meg a betűk generálásának darabszámát: "))
-    hatarszam1=int(input(f"{prefix}Add meg a kisebbik határt: "))
-    hatarszam2=int(input(f"{prefix}Add meg a nagyobbik határt: "))
+    if dontes ==1: 
+        darabszam=int(input(f"{prefix}Add meg a számok generálásának darabszámát: "))  
+        hatarszam1=int(input(f"{prefix}Add meg a kisebbik határt: "))
+        hatarszam2=int(input(f"{prefix}Add meg a nagyobbik határt: "))
+    else:
+        darabbetu=int(input(f"{prefix}Add meg a betűk generálásának darabszámát: "))
 try:
     bekeres()
 except:
     bekeres()
 if dontes == 1:
-    generatingValues(darabszam, darabbetu, hatarszam1, hatarszam2)
+    generatingValues(darabszam, hatarszam1, hatarszam2)
 else:
-    generatingBetu(darabszam, darabbetu, hatarszam1, hatarszam2)
+    generatingBetu( darabbetu)
 
 savingValues()
 checkingSave()
