@@ -46,7 +46,9 @@ darabbetu=int(input(f"{prefix}Add meg a betűk generálásának darabszámát: "
 hatarszam1=int(input(f"{prefix}Add meg a kisebbik határt: "))
 hatarszam2=int(input(f"{prefix}Add meg a nagyobbik határt: "))
 if dontes == 1:
+    generatingValues(darabszam, darabbetu, hatarszam1, hatarszam2)
+else:
+    generatingBetu(darabszam, darabbetu, hatarszam1, hatarszam2)
 
-generatingValues(darabszam, darabbetu, hatarszam1, hatarszam2)
 savingValues()
 checkingSave()
