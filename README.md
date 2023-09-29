@@ -15,8 +15,11 @@ Not yet... Is that necesary now?
 I uploaded it, so you don't need to search on the website, but I place the URL too.
 https://miklospeter.wordpress.com 
 ### Finished leaderboard:
->      Máté     -     Soma     -   Constantine
->**ready** Yes              -             Yes 
->**tested** Yes              -               Yes
->**finished** Yes             -                 No
-The first finished part: Máté, Generating Values. 
+| Names    |   Máté    |    Soma    |  Constantine  |
+|    ---   |    ---    |    ---     |      ---      |
+| Ready    |    ✅    |     ❌     |      ✅       |
+| Tested   |    ✅    |     ❌     |      ✅       |
+| Finished |    ✅    |     ❌     |      ❌       |
+
+`The first finished part: Máté, Generating Values.` ⭐
+>❌ Soma did not uploaded any files, or work.
