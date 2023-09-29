@@ -12,7 +12,7 @@ Members role: Máté ~ dealing with random generating, Soma ~ Web development an
 Not yet... Is that necesary now?
 ### Todo list: 📋
 > You can check it here: **todo.pdf**
-I uploaded it, so you don't need to search on the website, but I place the URL too.
+I uploaded it, so you don't need to search on the website, but I leave here the URL too.
 https://miklospeter.wordpress.com 
 # Working leaderboard:
 You can check here the team's current state!
