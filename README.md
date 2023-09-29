@@ -14,12 +14,13 @@ Not yet... Is that necesary now?
 > You can check it here: **todo.pdf**
 I uploaded it, so you don't need to search on the website, but I place the URL too.
 https://miklospeter.wordpress.com 
-### Finished leaderboard:
+# Working leaderboard:
+You can check here the team's current state!
 | Names    |   Máté    |    Soma    |  Constantine  |
 |    ---   |    ---    |    ---     |      ---      |
-| Ready    |    ✅    |     ❌     |      ✅       |
-| Tested   |    ✅    |     ❌     |      ✅       |
-| Finished |    ✅    |     ❌     |      ❌       |
+| Ready    |    ✅    |     ❌     |        ✅     |
+| Tested   |    ✅    |     ❌     |        ✅     |
+| Finished |    ✅    |     ❌     |        ❌     |
 
-`The first finished part: Máté, Generating Values.` ⭐
+>⭐ The first finished part: Máté, Generating Values.
 >❌ Soma did not uploaded any files, or work.
