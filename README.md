@@ -20,7 +20,7 @@ You can check here the team's current state!
 |    ---   |    ---    |    ---     |      ---      |
 | Ready    |    ✅    |     ❌     |        ✅     |
 | Tested   |    ✅    |     ❌     |        ✅     |
-| Finished |    ✅    |     ❌     |        ❌     |
+| Finished |    ✅    |     ❌     |        ✅     |
 
 >⭐ The first finished part: Máté, Generating Values.
 >❌ Soma did not uploaded any files, or work.
