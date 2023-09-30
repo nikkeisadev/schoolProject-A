@@ -14,6 +14,7 @@ freshInject = ''
 preOrderType = None
 questionInject = False
 doValuesCheck =  True
+doAppend = None
 #Asking the user that which option do he/she want's to choose.
 def getOrder():
     global preOrderType
@@ -47,20 +48,28 @@ def valuesCheck():
     global ints
     global mainList
     global argValue
+    global doAppend
+    ints.clear()
     #I dun wanna duplicate every item in the list...
     if doAgain:
         #Checking the file, strings or ints.
         argValue = all(ele.isdigit() for ele in mainList)
         #If the file contains ints, then we need to convert them from string numbers to integers.
-        sdoAgain = False       
         if argValue:
             for element in mainList:
                 ints.append(int(element))
+            if doAppend:
+                ints.append(int(freshInject))
+                doAppend = False
 #Method for quick ascending sorting. (Only int.)
 def fastOrderAscending(readableList):
     small = []
     equals = []
-    biger = []
+    bigger = []
+    mainList.clear()
+    small.clear()
+    equals.clear()
+    bigger.clear()
     size = len(readableList)
 
     if size <= 1:
@@ -73,15 +82,8 @@ def fastOrderAscending(readableList):
         if num == pivot:
             equals.append(num)
         if num > pivot:
-            biger.append(num)
-
-    return fastOrderAscending(small) + equals + fastOrderAscending(biger)
-
-#Method for quick descending sorting. (Only int.)
-def fastOrderDescending():
-    global mainList
-    fastOrderAscending(mainList)
-    mainList.reverse()
+            bigger.append(num)
+    return fastOrderAscending(small) + equals + fastOrderAscending(bigger)
 
 #Method for bubble ascending sorting. (Only String.)
 def bubbleSortStringAscent(s):
@@ -118,6 +120,7 @@ def processOrders():
     #Define global values.
     global ints
     global preOrderType
+    global doAppend
     global mainList
     global argValue
     global questionInject
@@ -135,6 +138,7 @@ def processOrders():
                 appendingNewInject()
                 print(f'[SORTER]> Added one more item! [{freshInject}]<-----')
                 doValuesCheck = False
+                doAppend = True
                 processOrders()
             else:
                 #Asking for new item into the list.
@@ -142,6 +146,7 @@ def processOrders():
                 appendingNewInject()
                 print(f'[SORTER]> Added one more item! [{freshInject}]<-----')
                 doValuesCheck = False
+                doAppend = True
                 processOrders()
         else:
             #Reseting the UI, and list.
@@ -156,6 +161,7 @@ def processOrders():
     if preOrderType == '1':
         #Fast order process.
         if argValue is True:
+            print(mainList)
             print('[SORTER]> Ascending order with Quick Sort method:\n         ', fastOrderAscending(ints))
             questionInject = True
             processOrders()
@@ -173,6 +179,7 @@ def processOrders():
             processOrders()
         #Fast order process.
         elif argValue is True:
+            print(mainList)
             print('[SORTER]> Descending order with Quick Sort method:\n         ', reverseStringValues(fastOrderAscending(ints)))
             questionInject = True
             processOrders()
