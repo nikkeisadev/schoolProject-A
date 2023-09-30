@@ -13,49 +13,49 @@ argValue = None
 freshInject = ''
 preOrderType = None
 questionInject = False
-
+doValuesCheck =  True
 #Asking the user that which option do he/she want's to choose.
 def getOrder():
     global preOrderType
     preOrderType = str(input('[SORTER]> Welcome! Tell me which option do you want to choose?\n          Ascending or Descending order? [1/2]> '))
-
 #Opening the file, spliting, and placing into the main list.
 def readFile():
     global mainList
-    global argValue
     #Reading file.
     with open("ki.txt", 'r') as f:
         mainList = f.read().split(";")
-    #Just to make it look better...
-    os.system('cls')
-    logo = """ 
+#Just to make it look better...
+os.system('cls')
+logo = """ 
  _____         _           
 |   __|___ ___| |_ ___ ___ 
 |__   | . |  _|  _| -_|  _|
 |_____|___|_| |_| |___|_|  --------> S O R T E R | Made by: Nikke
 
 """
-    for char in logo:
-        sleep(0.005)
-        sys.stdout.write(char)
-        sys.stdout.flush()
-    #Displaying newly readed values.
-    print('[SORTER]> Readed values: ', mainList)
-
+for char in logo:
+    sleep(0.005)
+    sys.stdout.write(char)
+    sys.stdout.flush()
+#Displaying newly readed values.
+print('[SORTER]> Readed values: ', mainList)
 #Checking values, converting string numbers to ints.
 def valuesCheck():
+    #Local variables.
+    doAgain = True
     #Global variables.
     global ints
     global mainList
     global argValue
-    #Checking the file, strings or ints.
-    argValue = all(ele.isdigit() for ele in mainList)
-    #If the file contains ints, then we need to convert them from string numbers to integers.
-    if argValue:
-        for element in mainList:
-            ints.append(int(element))
-    print(ints)
-
+    #I dun wanna duplicate every item in the list...
+    if doAgain:
+        #Checking the file, strings or ints.
+        argValue = all(ele.isdigit() for ele in mainList)
+        #If the file contains ints, then we need to convert them from string numbers to integers.
+        sdoAgain = False       
+        if argValue:
+            for element in mainList:
+                ints.append(int(element))
 #Method for quick ascending sorting. (Only int.)
 def fastOrderAscending(readableList):
     small = []
@@ -111,6 +111,7 @@ def appendingNewInject():
     mainList.append(freshInject)
     valuesCheck() 
     questionInject = False
+    doValuesCheck = False
 
 #Main part of the code, processing every order, as the user wanted.
 def processOrders():
@@ -121,6 +122,7 @@ def processOrders():
     global argValue
     global questionInject
     global freshInject
+    global doValuesCheck
    #Read this! There are 2 types of orders in this code: the Quick type, and the Bubble method.
    #Qucik sorting used for ints, it's easier for them, and Bubble for only strings.
    #So there is one mentioned sorting type, and one that's did'nt mentioned.
@@ -132,28 +134,27 @@ def processOrders():
                 freshInject = input("[SORTER]> Please type a new item: ")
                 appendingNewInject()
                 print(f'[SORTER]> Added one more item! [{freshInject}]<-----')
+                doValuesCheck = False
                 processOrders()
             else:
                 #Asking for new item into the list.
                 freshInject = input("[SORTER]> Please type a new item: ")
                 appendingNewInject()
                 print(f'[SORTER]> Added one more item! [{freshInject}]<-----')
+                doValuesCheck = False
                 processOrders()
         else:
             #Reseting the UI, and list.
+            questionInject = False
             ints.clear()
             mainList.clear()
+            getOrder()
             readFile()
-            valuesCheck()
             processOrders()
-            
-
-    
     #Ascending or Descending orders are processed.
+    valuesCheck()
     if preOrderType == '1':
         #Fast order process.
-        valuesCheck()
-        print('[SORTER]> Ascending selected!')
         if argValue is True:
             print('[SORTER]> Ascending order with Quick Sort method:\n         ', fastOrderAscending(ints))
             questionInject = True
@@ -166,7 +167,6 @@ def processOrders():
     elif preOrderType == '2':
         #Bubble order process.
         valuesCheck()
-        print('[SORTER]> Descending selected!')
         if argValue is False:
             print('[SORTER]> Descending order with Bubble Sort method:\n         ', reverseStringValues(bubbleSortStringAscent(mainList)))
             questionInject = True
@@ -177,7 +177,6 @@ def processOrders():
             questionInject = True
             processOrders()
     else: print(f'Wrong parameter! [{preOrderType}]<----'), getOrder()
-
 #Initilazing definitions.
 #----------------------------------------->
 readFile()
