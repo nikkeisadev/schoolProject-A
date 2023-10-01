@@ -18,9 +18,9 @@ https://miklospeter.wordpress.com
 You can check here the team's current state!
 | Names    |   Máté    |    Soma    |  Constantine  |
 |    ---   |    ---    |    ---     |      ---      |
-| Ready    |    ✅    |     ❌     |        ✅     |
-| Tested   |    ✅    |     ❌     |        ✅     |
-| Finished |    ✅    |     ❌     |        ✅     |
+| Ready    |    ✅    |     ✅     |        ✅     |
+| Tested   |    ✅    |     ✅     |        ✅     |
+| Finished |    ✅    |     ✅     |        ✅     |
 
 >⭐ The first finished part: Máté, Generating Values.
 >❌ Soma did not uploaded any files, or work.
