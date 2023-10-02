@@ -24,7 +24,7 @@ def readFile():
     global mainList
     #Reading file.
     with open("ki.txt", 'r') as f:
-        mainList = f.read().split(";")
+        mainList = f.read().removesuffix(";").split(";")
 #Just to make it look better...
 os.system('cls')
 logo = """ 
@@ -39,7 +39,7 @@ for char in logo:
     sys.stdout.write(char)
     sys.stdout.flush()
 #Displaying newly readed values.
-print('[SORTER]> Readed values: ', mainList)
+print('[SORTER]> Readed values: ', open("ki.txt", 'r').read())
 #Checking values, converting string numbers to ints.
 def valuesCheck():
     #Local variables.
