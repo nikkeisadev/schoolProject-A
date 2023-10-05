@@ -184,7 +184,7 @@ def processOrders():
             questionInject = True
             processOrders()
     else: print(f'Wrong parameter! [{preOrderType}]<----'), getOrder()
-#Initilazing definitions.
+#Initializing definitions.
 #----------------------------------------->
 readFile()
 getOrder()
